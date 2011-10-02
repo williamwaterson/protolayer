@@ -1,0 +1,166 @@
+1. Make return on search field result in webkit view appearing
+
+2. Click on search button results in search screen coming up
+
+3. Click on concept button shifts to layering view plus concept tree
+
+4. Click on instance button shifts to layering view plus instance tree
+
+
+
+
+1, Make text font smaller to search field and match safari, OPEN
+
+2, Make background of toolbar of suitable lines, CLOSED
+
+3, Make the search bar as wide as the remaining portion of the toolbar, CLOSED
+
+4, Add up/down and forward/back buttons in the toolbar, CLOSED
+
+5, Load images into icons
+
+6, Get segmented control into carbonyl
+
+7, Get positioning and size setting correct for all panes, CLOSED
+
+8, Get OpenGL positining and size correct, CLOSED
+
+9, Get border on toolbar going correctly, CLOSED
+
+10. Integrate the various graph state operations, CLOSED
+
+11. Ensure complete redraw of window under animation to prevent blank screeen on startup, CLOSED
+
+12. Bring the application to the front, CLOSED
+
+13. Make the search bar as wide as the application allows, IRRELEVANT
+
+14. Phase in layer hexmesh, CLOSED
+
+15. Phase in the domain prism
+
+16. Phase in the layer prism
+
+17. Phase in connection arrow, CLOSED
+
+18. Phase in the creation of the arrow. CLOSED
+
+19. Get the render area as big as the application area allows, CLOSED
+
+20. Ensure resizing of window resizes the toolbar, CLOSED
+
+21. Ditto for the rendering pane, CLOSED
+
+22. Ditto for the status placard, CLOSED
+
+23. Get golden ratio as starting application size, CLOSED
+
+24. Get the HitModel working properly, CLOSED
+
+25. Get the retarget camera state to work, CLOSED
+
+26. Get actions to work
+
+27. Get transitions to work
+
+28. Implement creation plane, CLOSED
+
+29. Implement projected mouse position, CLOSED
+
+30. Implement node creation, CLOSED
+
+31. Implement connection creation, CLOSED
+
+32. Implement colour change on selection, CLOSED
+
+33. Implement node drag in application, CLOSED
+
+34. Implement connection movement from node drag, CLOSED
+
+35. Implement node deletion
+
+36. Implement connection deletion
+
+37. Implement connection deletion from node deletion
+
+38. Implement multiple select and unselect on shift key, COMPLETE
+
+39. Implement pan camera between layers on connection creation
+
+40. Implement secondary type of arrow for deps
+
+41. Exploding nodes with internal layers exposed
+
+42. Rotisary selection of layers for node
+
+43. Reimplement all object position based on quaternions
+
+44. Fix node drag on creation so it properly tracks the mouse, CLOSED
+
+45. Shift all creation and editing buttons into a utility window, CLOSED
+
+46. Use the alternative GetMouse then loop for mouse position for better behaviour
+
+47. Fix appearance of dragged of arrows both during creation and node drag
+
+48. Eliminate node creation on regaining focus on the window when in node creation mode
+
+49. Ensure boundary checking on node creation within graph
+
+50. Replace black arrow with white arrow but black border and nontransparent
+
+51. Ensure double click allows scene change only when one node is selected
+
+52. Improve the selection behaviour of nodes and connections
+
+53. Improve mouse tracking in drag mode
+
+54. Correct node creation in other plane
+
+55. Get correct pan/move behaviour camera (update of item/camera)
+
+56. Good background colour, CLOSED
+
+57, Color for nodes, CLOSED
+
+58. Fade out other nodes on node selection no arrow mode in navigation mode
+
+59. Use color change rather than alpha change in rendering nodes on fade
+
+60. Use color change rather than alpha change in rendering nodes on appear
+
+61. Correct on going down layers for fade out of existing hexmesh
+
+62. Get subprisms to appear on select node in nav mode
+
+63. Get arrows in place for rotation of orbital items in node nav mode
+
+64. Get layer selection to work
+
+65. Get layer zoom to work to next granularity
+
+66. Get layer zoom out to work on previous granularity
+
+67. Get arrow creation to work on node
+
+68. Get cross granularity arrow creation to work
+
+69. Get dialog appearance on menu selection for method choice
+
+70. Get 3d graph layout cascading
+
+71. Add button to fade between geometry and granularity modes
+
+72. Rename NodePolyhedra to InstancePolyhedra
+
+73. Ensure zoom out pulls out from the correct prism rather than the centre of the shot, OPEN
+
+74. Ensure node creation leads to transitions to connection creation
+
+75. Move buttons our of side window into main and eliminate that window
+
+76. Make room for tree view in the assembly window
+
+77. Eliminate the search window
+
+78. Provide type selection mechanism

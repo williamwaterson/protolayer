@@ -1,0 +1,31 @@
+propagate scopes into typedefs
+
+Recode everything to use vector assembly of stanzas for each type and then using pointers into that ordered collection 
+
+Check to see if namespace is working correctly
+
+1. Provide means to provide inclass method definition (by skipping contents of defintiion between { and }
+
+2. provide means to handle template function and template class
+
+1. Provide means to handle inline keyword
+
+1. Ensure better detection of which class should be scanned for annotatinos in relation to method definitions in the source file read (better idenditicaiton of the class decleartion to be scanned)
+
+1. Add stateless / stateful as parameters to @remote (make default based on other 
+
+3. Fix cases where no attributes or methods available so as to drop any visibility scopes from output
+
+4. Add session id to stateful case and mapping to instances
+
+5. Add options on annotations
+
+6. Add xdr/xml options on serialise 
+
+7. Add xdr/soap option on remote
+
+8. Add collection detection and template detection in class
+
+9. Ensure prototype always generates public attributes or public setters/getters
+
+10. Add setter getter options on prototype

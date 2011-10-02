@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<protolayer>
+
+   <server>
+
+      <adminservice port="80000" />
+
+      <namingservice port="80001" />
+
+      <ontoservice edit-port="80003"
+                   access-port="80004" />
+
+   </server>
+
+</protolayer>

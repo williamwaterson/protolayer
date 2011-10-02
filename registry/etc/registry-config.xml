@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<protolayer>
+
+   <server>
+
+      <adminservice port="80000" />
+
+      <ontoservice port="80003" />
+
+   </server>
+
+</protolayer>

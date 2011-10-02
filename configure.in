@@ -1,0 +1,101 @@
+AC_PREREQ(2.50)
+
+# Process this file with autoconf to produce a configure script.
+AC_INIT(util/src/protolayer/util/Point.cpp)
+AM_INIT_AUTOMAKE(protolayer, 1.0)
+AM_CONFIG_HEADER(config.h)
+
+CFLAGS="-m32"
+CXXFLAGS="$CFLAGS"
+
+# Checks for programs.
+
+# gcc 2.95 has bugs with exceptions and shared libs on solaris, so in that
+# you need to use ./configure --disabled-shared
+AUTOMAKE_OPTIONS = no-dependencies
+
+AC_PROG_CXX
+AC_PROG_OBJC
+AC_DEFUN([AM_PROG_OBJC],[
+AC_CHECK_PROGS(OBJC, $CC gcc, gcc)
+test -z "$OBJC" && AC_MSG_ERROR([no acceptable gcc found in \$PATH])
+if test "x${OBJCFLAGS-unset}" = xunset; then
+   OBJCFLAGS="-g -O2"
+fi
+AC_SUBST(OBJCFLAGS)
+_AM_IF_OPTION([no-dependencies],, [_AM_DEPENDENCIES(OBJC)])
+])
+
+
+# Comment out disabled shared as this is the exception and not the norm.
+# See above for explanation.
+# AC_DISABLE_SHARED
+AC_LIBLTDL_CONVENIENCE
+AC_LIBTOOL_DLOPEN
+AC_SUBST(LTDLINCL)
+AC_SUBST(INCLTDL)
+AC_SUBST(LIBLTDL)
+AM_PROG_LIBTOOL
+AC_CONFIG_SUBDIRS(libltdl)
+
+# Checks for libraries.
+AC_CHECK_LIB([xerces-c], [main],, 
+             AC_MSG_ERROR([unable to find xerces-c]))
+
+echo $ECHO_N "checking if we can build Mac OS X GUI apps ... $ECHO_C" >&6
+case $host in
+    *darwin*)
+       echo "yes"
+       darwinppc=yes;
+    ;;
+  *)
+    echo "no"
+    darwinppc=no;
+    ;;
+esac
+
+if test "$darwinppc" = yes; then
+  MACOSX_DIRS="carbon osx proto"
+else
+  MACOSX_DIRS=
+fi
+AC_SUBST([MACOSX_DIRS])
+
+
+# Define a macro that is used to parse a --with-apache parameter
+# The macro is named "APACHE_DIR"
+#AC_DEFUN([APACHE_DIR],[
+#
+	#AC_ARG_WITH(
+		#apache,
+			#[  --with-apache[=DIR]     Apache server directory],
+			 #  ,
+				#[with_apache="no"]
+				#)
+
+#				AC_MSG_CHECKING(for Apache directory)
+#
+	#			if test "$with_apache" = "no"; then
+		#		   AC_MSG_ERROR( You need to specify the apache directory using --with-apache)
+			#	   else
+					# make sure that a well known include file exists
+				#	  if test -e $with_apache/include/httpd.h; then
+					#	  apache_dir=$with_apache
+						#		AC_MSG_RESULT(APACHE found!)
+							#			     else
+								#				AC_MSG_ERROR( $with_apache not found.  Check the value you specified with --with-apache)
+										#			      fi
+											#		      fi
+#
+#])
+
+# Now call the APACHE_DIR macro that was just specified
+#APACHE_DIR
+
+# Save the location of apache into the "apache_dir" variable.
+# The AC_SUBST macro causes the variable to be saved in config.status
+#AC_SUBST(apache_dir)
+
+AC_CONFIG_FILES([Makefile util/Makefile util/src/Makefile scenegraph/Makefile scenegraph/src/Makefile common/Makefile common/src/Makefile logger/Makefile logger/src/Makefile cppdoclet/Makefile concurrency/Makefile concurrency/src/Makefile pooling/Makefile pooling/src/Makefile naming/Makefile naming/src/Makefile dimensional/Makefile dimensional/src/Makefile workflow/Makefile workflow/src/Makefile pforms/Makefile pforms/src/Makefile linearalgebra/Makefile linearalgebra/src/Makefile evaluators/Makefile evaluators/src/Makefile iostream/src/Makefile iostream/Makefile xml/src/Makefile xml/Makefile net/Makefile carbon/Makefile nurbs/Makefile ontologydto/Makefile ontologydto/src/Makefile dto/Makefile dto/src/Makefile serialisation/Makefile serialisation/src/Makefile persistence/Makefile persistence/src/Makefile database/Makefile ontology/Makefile ontology/src/Makefile assembly/Makefile assembly/src/Makefile animation/Makefile animation/src/Makefile style/Makefile style/src/Makefile glrep/Makefile glrep/src/Makefile renderer/Makefile subdivision/Makefile osx/Makefile fx/Makefile geometry/Makefile proto/Makefile server/Makefile matchingservice/Makefile containerservice/Makefile publishingservice/Makefile registration/Makefile relayservice/Makefile nameservice/Makefile compileservice/Makefile registry/Makefile federator/Makefile node/Makefile])
+
+AC_OUTPUT

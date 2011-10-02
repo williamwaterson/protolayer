@@ -1,0 +1,10 @@
+Package Dependencies
+
+The packages within the source code hierarchy of  
+related to each other in a directed-acyclic graph of
+dependencies. As such, the related ant build.xml has
+been structured so that instead of compiling the entire
+source in one go, individual packages are sequentially
+built according to thsis dependency hierarchy. In this
+way, any cyclic dependencies introduced by developers
+will be caught at compile time.

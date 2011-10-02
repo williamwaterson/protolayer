@@ -1,0 +1,15 @@
+TODO:
+- Better test DomainInstance and Assembly (no tests for Assembly presently).
+- Memory leaks in net components from creating new xdrstreams (look at pooling)
+- Memory leaks in net components from creating new sockets within the server (look at pooling).
+- Ensure pointer conversions go to longs rather than ints
+- Ensure the XUL attributes are stored internally as enums so that xdr encoding int encoded rather than string encoded for these attributes.
+- Ensure the techserver provides XUL descriptors in a separate thread and ensure it is initially loaded into a byte buffer rather
+then encoded into XDR every request for presentation.
+- Ensure better check for failed file load when mispelled file name through better exception catching in reading
+int eh document or checking error codes to stop bus errors.
+- Ensure better check on technqiuetype urn existence in Server for technique types so does not allocate accidentally with operator[]
+- Use a better urn -> technqiuetypeservent mapping
+- need pool of threads for servers
+- dynamic pool growing and shrinking for thread pool.
+- fix failing to find the xml document during the process of loading in the servers

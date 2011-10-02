@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<ontology>
+
+  <domain name="Chemistry">
+    <type name="Atom" />
+    <type name="Bond" />
+    <type name="Molecule" />
+  </domain>
+
+  <domain name="ChemicalEngineering">
+    <type name="System" isAbstract="true"/>
+    <type name="SpatialSystem" />
+    <type name="ConceptualSystem" />
+    <type name="Population" />
+    <type name="Boundary" />
+  </domain>
+
+  <association>
+    <from type="Chemistry.Molecule" multiplicity="1" />
+    <to type="Chemistry.Atom" multiplicity="0..*" />
+  </association>
+
+  <generalisation supertype="ChemicalEngineering.System"
+                  subtype="ChemicalEngineering.SpatialSystem" />
+
+  <generalisation supertype="ChemicalEngineering.System"
+                  subtype="ChemicalEngineering.ConceptualSystem" />
+
+</ontology>

@@ -1,0 +1,33 @@
+#ifndef GELATINE_GELATINE_RENDERER_H
+#define GELATINE_GELATINE_RENDERER_H
+
+#include "ControlPoint.h"
+#include "Curve.h"
+#include "Surface.h"
+#include "Vertex.h"
+#include "Action.h"
+#include "Appearance.h"
+#include "Camera.h"
+#include "DefaultTransition.h"
+#include "Dimensions.h"
+#include "Geometry.h"
+#include "Group.h"
+#include "HitListener.h"
+#include "HitModel.h"
+#include "Shape.h"
+#include "LinearAlgebra.h"
+#include "Mouse.h"
+#include "Node.h"
+#include "Point.h"
+#include "ProjectedMouse.h"
+#include "Scene.h"
+#include "SceneModel.h"
+#include "SelectionPlane.h"
+#include "Shot.h"
+#include "Space.h"
+#include "SpecificGeometry.h"
+#include "SpaceModel.h"
+#include "SpaceView.h"
+#include "Transition.h"
+
+#endif // GELATINE_GELATINE_RENDERER_H

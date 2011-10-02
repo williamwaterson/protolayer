@@ -1,0 +1,55 @@
+==EvieUI Stories==
+
+'''Table 1: Final Phase Stories'''
+<table>
+<tr><td>'''Story'''</td><td>'''Description'''</td><td>'''Difficulty'''</td><td>'''Status'''</td></tr>
+<tr><td>1</td><td>(Low Priority) Make clicks on Role items in the ExecutionView tree display BOTH the Inbox and Outbox for the that node (still allow the user to singularly select inboxes and outboxes also if they choose to). Might need to also hightlight in the tree the particular inboxes and outboxes currently selected to give even further context to the InboxView and OutboxView</td><td>Medium
+</td><td></td></tr>
+<tr><td>2</td><td>>(Low Priority: Workaround exists) Eliminate shutdown bug, in which the polling timers for the InboxView and OutboxView seem to hold invalid references to disposed GUI components, causing the application process to fail to terminate (requiring kill)</td><td>High</td><td></td></tr>
+<tr><td>3</td><td>Make the ProcessAt columns wider in the InboxView and OutboxView</td><td>Very Low</td><td>'''Done'''</td></tr>
+<tr><td>4</td><td>Make the ID column more narrow on the InboxView and OutboxView
+</td><td>Very Low</td><td>'''Done'''</td></tr>
+<tr><td>5</td><td>Increase the refresh frequency for the Inbox and Outbox from once every 3 seconds to once every 1 second.</td><td>Very Low</td><td>'''Done'''</td></tr>
+<tr><td>6</td><td>To provide context to the InboxView and OutboxView, at the top of these views, display the Role and Partner for the Inbox and Outbox being displayed</td><td>Very Low</td><td>'''Done'''</td></tr>
+<tr><td>7</td><td>>(Not applicable) Add a single space column for the first column of the InboxView table and OutboxView table.</td><td>Very Low</td><td></td></tr>
+<tr><td>8</td><td>(HP) Ensure the timer is greyed out when the server is not started because the user cannot advance a clock for a stopped server (visually disable but still display the ticking, real time)</td><td>Very Low</td><td></td></tr>
+<tr><td>9</td><td>(Alternative Use Case Lowers Priority) Ensure initialisation really works independently. Ensure start and stop buttons function correctly according to start/stop graying out and possibly initialisation button revealing.
+</td><td>Medium</td><td></td></tr>
+<tr><td>10</td><td>(High) Immediately refresh the Inbox and Outbox views when the timer is advanced (rather than waiting on the polling timers to perform the update of these views)</td><td>Very Low</td><td></td></tr>
+<tr><td>11</td><td>(High) Immediately refresh the Inbox and Outbox views when a message is sent (rather than waiting on the polling timers to perform the update of these views)</td><td>Very Low</td><td></td></tr>
+<tr><td>12</td><td>(High) Ensure messages displayed in the Inbox and Outbox are ordered according to their ProcessAt time. Extend this story if possible to include ordering based on clicking on any column displayed in the table (for the moment ensure ProcessAt)</td><td>Medium</td><td></td></tr>
+<tr><td>13</td><td>Add mutual exclusion case (Tony)
+</td><td></td><td></td></tr>
+<tr><td>14</td><td>Fix not being able to see information with log (?) (Tony)
+</td><td></td><td></td></tr>
+<tr><td>15</td><td>(High) Fix bug which causes certain messages to not be displayed in the MessageView when selected in the Inbox and Outbox Views.</td><td>Medium-to-High</td><td></td></tr>
+<tr><td>16</td><td>(Medium Priority) Add a value checker on the MessageView so that the send button is disabled while fields are incomplete in the message</td><td>Medium</td><td></td></tr>
+<tr><td>17</td><td>(Check with Tony as server level problem; High Priority) For the InboxView, ensure that messages are filtered on SentAt to ensure those messages that havent arrived yet are not shown.</td><td>Medium</td><td></td></tr>
+<tr><td>18</td><td>(Leave to end) Perform more testing to ensure the application is more durable in the case of setting different scenarios and service configurations</td><td>Medium</td><td></td></tr>
+<tr><td>19</td><td>(High Priority: Check with Tony regarding MessageId == CorrelationId. Also ensure that the autopopulated message fields are locked through ghosted out to maintain reply-message status) Provide a Reply menu item on the InboxView which creates a new message in the MessageView which autopopulates with the appropriate Sender/Receiver and CorrelationId. '''Question: For reply messages only, should I lock the sender and receiver by disabling the respective combobox boxes to ensure this remains a reply, renabling only if "new" or "duplicate" buttons are pressed at the top of the MessageView? Alternatively, should I have these enabled and ensure that message is no longer a reply message if the sender or receiver are changed (i.e. set the isArchived flag to false)'''
+</td><td>Medium-to-High</td><td></td></tr>
+<tr><td>20</td><td>(Check with Tony if this is possible: Same priority as above)Ensure that all of these Reply messages already have their isArchived flag set to true.
+</td><td>Low</td><td></td></tr>
+<tr><td>21</td><td>(Medium Priority) Display text at the top the ExecutionView indicating its status (stopped/started/starting/stopping)</td><td>Low</td><td></td></tr>
+<tr><td>22</td><td>(High Priority) '''Change this story to ensure that all services displayed within the ExecutionTree are started/stopped according to the start/stop buttons at the top of this view'''. Ensure that each service can be independently started (unlike presently which just starts the RFQ_Service)</td><td>Medium-to-High</td><td></td></tr>
+<tr><td>23</td><td>(Intrinsic to above story (N/A)) Ensure when selecting a service in the ExecutionView the related stop/start/init/timer buttons are enabled/disabled appropriately.</td><td>Low</td><td></td></tr>
+<tr><td>24</td><td>(High) Provide fixed ordering of the five header items in the MessageView.</td><td>Low</td><td></td></tr>
+<tr><td>25</td><td>(High) For the MessageView, ensure the items displayed in the Sender and Receiver comboboxes are ordered in the same order everytime those items are displayed on this control
+</td><td>Medium</td><td></td></tr>
+<tr><td>26</td><td>(Medium) For the MessageView, if header values have already been set by the user (sender/receiver/command/correlationID/processat), then ensure these values remain in these fields when the user selects a different Message Type from the Message Type combobox.
+</td><td>Medium</td><td></td></tr>
+<tr><td>27</td><td>(High) For Fault messages (red) provide a means for displaying the fault reason. Noted approach: For messages with a fault, when the user double clicks on a row in the Inbox or Outbox, the MessageView displaying that message also shows the message fault as text at the top of that view.
+</td><td>Medium</td><td></td></tr>
+<tr><td>28</td><td>(Low) See if its possible to fix the refresh glitch for the Inbox and Outbox which repositions the related scrollbars back to the left/top on every refresh, making it difficult to view data that is off the view's display which has to be scrolled to.
+</td><td>High</td><td></td></tr>
+<tr><td>29</td><td>(Low) Look at and thoroughly test using properties to set the scenario file possibly switching to a getResource spproach to obtain this file from somewhere (ensure we can set the scenario and evie-service.xml somehow).
+</td><td>Medium</td><td></td></tr>
+<tr><td>30</td><td>Write up configuration notes to ensure someone understands how to install this software.</td><td>Medium</td><td></td></tr>
+<tr><td>31</td><td>(High Priority) Truncate message type value in messagetype column to display only the message type as shown in the MessageView (talk to tony about string functions available to do this presently).</td><td>Medium</td><td></td></tr>
+
+</table>
+
+Notes:
+
+* Resources versus files (reading regarding the approach Eclipse uses)
+* Utilise a properties files handling approach to properties specification of file location.

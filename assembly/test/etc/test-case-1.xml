@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<ontology>
+
+  <domain name="Chemistry">
+    <type name="Reaction" />
+    <type name="Participant" isAbstract="true"/>
+    <type name="Reactant" />
+    <type name="Product" />
+    <type name="Phase" />
+    <type name="Chemical" />
+    <type name="Molecule" />
+    <type name="Atom" />
+    <type name="Bond" />
+    <type name="Element" />
+  </domain>
+
+  <domain name="ChemicalEngineering">
+    <type name="Population" />
+    <type name="System" isAbstract="true" />
+    <type name="SpatialSystem" />
+    <type name="ConceptualSystem" />
+    <type name="Boundary" />
+    <type name="Variation" />
+    <type name="Mechanism" />
+    <type name="Stream" />
+  </domain>
+
+  <domain name="Spatial" >
+    <type name="Region" />
+    <type name="Shell" />
+    <type name="Face" />
+    <type name="Loop" />
+    <type name="Edge" />
+    <type name="Vertex" />
+  </domain>
+
+  <association>
+    <from type="Chemistry.Reaction" multiplicity="*" />
+    <to type="Chemistry.Reactant" multiplicity="1..*" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Reaction" multiplicity="*" />
+    <to type="Chemistry.Product" multiplicity="1..*" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Participant" multiplicity="*" />
+    <to type="Chemistry.Chemical" multiplicity="1" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Participant" multiplicity="*" />
+    <to type="Chemistry.Phase" multiplicity="1" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Phase" multiplicity="*" />
+    <to type="Chemistry.Chemical" multiplicity="1..*" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Chemical" multiplicity="*" />
+    <to type="Chemistry.Molecule" multiplicity="1" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Molecule" multiplicity="1" />
+    <to type="Chemistry.Atom" multiplicity="1..*" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Molecule" multiplicity="1" />
+    <to type="Chemistry.Bond" multiplicity="0..*" />
+  </association>
+
+  <association>
+    <from type="Chemistry.Atom" multiplicity="0..*" />
+    <to type="Chemistry.Element" multiplicity="1" />
+  </association>
+
+  <generalisation supertype="ChemicalEngineering.System"
+                  subtype="ChemicalEngineering.SpatialSystem" />
+
+  <generalisation supertype="ChemicalEngineering.System"
+                  subtype="ChemicalEngineering.ConceptualSystem" />
+
+  <generalisation supertype="Chemistry.Participant"
+                  subtype="Chemistry.Reactant" />
+
+  <generalisation supertype="Chemistry.Participant"
+                  subtype="Chemistry.Product" />
+
+</ontology>

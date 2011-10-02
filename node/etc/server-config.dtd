@@ -1,0 +1,19 @@
+<!ELEMENT server (
+    adminservice,
+    nameservice,
+    ontoservice
+)>
+
+<!ELEMENT adminservice (#PCDATA)>
+<!ATTLIST adminservice port CDATA #IMPLIED>
+
+<!ELEMENT nameservice (#PCDATA)>
+<!ATTLIST nameservice edit-port CDATA #IMPLIED>
+<!ATTLIST nameservice access-port CDATA #IMPLIED>
+
+<!ELEMENT ontoservice (#PCDATA)>
+<!ATTLIST ontoservice edit-port CDATA #IMPLIED>
+<!ATTLIST ontoservice access-port CDATA #IMPLIED>
+
+
+

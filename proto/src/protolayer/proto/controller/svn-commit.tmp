@@ -1,0 +1,7 @@
+Added
+--This line, and those below, will be ignored--
+
+A    interaction/CreateReference.cpp
+AM   interaction/CreateReference.h
+A    interaction/CreateInstance.cpp
+AM   interaction/CreateInstance.h

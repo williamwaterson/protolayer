@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<protolayer>
+
+  <technique-type port="80001">
+
+    <description>Numerical representation of a chemical system</description>
+
+    <mapped fromMultiplicity="1" toMultiplicity="1" conceptType="0001:1:System" />
+
+    <dependent-variables>
+       <variable name="enthalpy" units="kgmol" type="floatVector" />
+       <variable name="componentFractions" type="float" />
+       <variable name="moleTotal" type="float" />
+    </dependent-variables>
+
+    <presentation>
+       <xul>
+       </xul>
+    </presentation>
+
+  </technique-type>
+
+</protolayer>

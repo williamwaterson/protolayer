@@ -1,0 +1,4 @@
+<!ELEMENT ontoservice (#PCDATA)>
+<!ATTLIST ontoservice port CDATA #IMPLIED>
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+  <ontology>
+    <domain name="Chemistry">
+      <type name="Molecule"/>
+      <type name="Atom"/>
+      <type name="Bond"/>
+    </domain>
+
+    <domain name="Spatial">
+      <type name="Vertex"/>
+      <type name="Edge"/>
+      <type name="Face"/>
+      <type name="Region"/>
+    </domain>
+
+    <association>
+      <from multiplicity="1" type="Chemistry.Molecule"/>
+      <to multiplicity="0..*" type="Chemistry.Bond"/>
+    </association>
+
+    <association>
+      <from multiplicity="0..*" type="Chemistry.Bond"/>
+      <to multiplicity="2" type="Chemistry.Atom"/>
+    </association>
+
+    <association>
+      <from multiplicity="1" type="Chemistry.Molecule"/>
+      <to multiplicity="1..*" type="Chemistry.Atom"/>
+    </association>
+
+    <association>
+      <from multiplicity="1" type="Chemistry.Molecule"/>
+      <to multiplicity="1..*" type="Spatial.Vertex"/>
+    </association>
+
+    <association>
+      <from multiplicity="0..*" type="Spatial.Edge"/>
+      <to multiplicity="2" type="Spatial.Vertex"/>
+    </association>
+
+</ontology>
+
+</root>

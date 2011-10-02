@@ -1,0 +1,7 @@
+1, Ensure better exception capture and handling in the creation process class, OPEN
+
+2, Ensure creationsequence class checks also the from end multiplicity constraints and constructs for this also requiring going up layers, OPEN
+
+3, Ensure DTD is written to check validity of element input with associations on domain rather than ontology, OPEN
+
+4. Need better exception error throw when no id set for domain ID

@@ -1,0 +1,65 @@
+1. Provide better distributed exception handling ensuring proper transmission of failures
+
+2. Ensure check on concept removal to ensure prevention of breaking dependencies upon the concept
+
+3. Rename of Type to Concept within the whole software
+
+5. Switch to pure pooling based arrangement for memory management in the server (connections, dtos, ontology entities, ...)
+
+6. Use zero ID on single create domain
+
+7. Ensure only one zero ID on domains passed as group to ontology instances
+
+8. Fix better normalisation on all entities
+
+9. Fix complete trimming on all entities on service side.
+
+10. Move normalisation to the the ontology instances out of the dtos
+
+11. Switch persistence to only ontology entities away from dtos to ensure valid structure
+
+12. Instantiate the actual ontology to ensure validity of structure 
+
+13. Improve assertTrue/assertFalse messages on regression tests for the registry service
+
+14. Bundle the relayservice into the registry also
+
+15. Readd Techniques to the database
+
+16. Further improve certain CRUD operations by fetching the typename from the class and substituting to cut down on functions
+
+17. Move all persistence class templates over to purely function templates because classes are overkill in this case
+
+18. Better provide logger through other mechanism rather than getSingleton
+
+19, Provide a proper means to switch out logging levels (implement debug, error, fatal, etc) as options through possibly xml
+
+20. Eliminate matchingservice and nameservice as these are now replaced
+
+21. Rename DTOs as prototypes
+
+22. Implement 
+
+23. Impl basic @persisted annotation
+
+23. Impl basic @pooled onnotation
+
+23. Impl basic @serialise annotation
+
+24. Impl basic @remote annotation
+
+25. Impl basic @prototype annotation
+
+26. Impl basic @persisted-prototype
+
+26. Impl basic @serialised-prototype
+
+27. Impl basic @stateful (implicitly @pooled)
+
+28. Impl basic @stateless (implicitly @pooled)
+
+29. Impl basic @pure-stateless (never pooled)
+
+30. Get basic on the wire error handling correct (exception type and exception message always read)
+
+31. 
